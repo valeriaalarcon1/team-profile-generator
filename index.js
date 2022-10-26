@@ -9,7 +9,7 @@ const Manager = require('./lib/Manager');
 const team = [];
 
 // prompt inputs
-function prompts() {
+function managerPrompt() {
    inquirer
         .prompt([
             {
@@ -39,7 +39,9 @@ function prompts() {
         const manager = new Manager (name, ID, email, officeNumber)
         team.push(manager);
     });
+}
 
+function employeePrompt() {
     inquirer
         .prompt([
             {
@@ -174,8 +176,9 @@ return `
 
 // INITIALIZATION
 function init() {
-    prompts();
-    (generateHTML(createCard));
+    managerPrompt();
+    employeePrompt();
+    generateHTML(createCard);
     fs.writeFile('./dist/index.html', generateHTML(createCard), (err) =>
     err ? console.error(err) : console.log('You have successfully created your team!'));
 }

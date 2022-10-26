@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Profile Generator</title>
+</head>
+<body>
+    <header class = "jumbotron jumbotron-fluid .bg-info">My Team</header>
+    <main>
+        () => {
+    team.forEach((person) => {
+        if (person.role === "Manager") {
+            return `
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h4 class="card-title">${person.name}</h4>
+                <h6 class="card-text">${person.role}</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: ${person.ID}</li>
+                    <li class="list-group-item">Email: ${person.email}</li>
+                    <li class="list-group-item">Office number: ${person.officeNumber}</li>
+                </ul>
+            </div>
+        </div>
+        `
+        } else if (person.role === "Engineer") {
+            return `
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h4 class="card-title">${person.name}</h4>
+                <h6 class="card-text">${person.role}</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: ${person.ID}</li>
+                    <li class="list-group-item">Email: ${person.email}</li>
+                    <li class="list-group-item">Github: <a href="github.com/${person.github}" class="card-link">${person.github}</a></li>
+                </ul>
+            </div>
+        </div>
+        `
+        } else if (person.role === "Engineer") {
+            return `
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h4 class="card-title">${person.name}</h4>
+                <h6 class="card-text">${person.role}</h6>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">ID: ${person.ID}</li>
+                    <li class="list-group-item">Email: ${person.email}</li>
+                    <li class="list-group-item">School: ${person.school} </li>
+                </ul>
+            </div>
+        </div>
+        `
+        }
+    })
+}
+    </main>
+</body>
+</html>

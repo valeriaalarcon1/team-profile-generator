@@ -178,7 +178,7 @@ return `
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./dist/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Profile Generator</title>
 </head>
@@ -201,7 +201,7 @@ return `
 async function init() {
     await managerPrompt();
     await employeePrompt();
-    fs.writeFile('./dist/index.html', generateHTML(createCard()), (err) =>
+    fs.writeFile('./index.html', generateHTML(createCard()), (err) =>
     err ? console.error(err) : console.log('You have successfully created your team!'));
 }
 

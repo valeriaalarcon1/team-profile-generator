@@ -120,43 +120,44 @@ const createCard = () => {
         if (person.getRole() === "Manager") {
             return `
             <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h4 class="card-title">${person.getName()}</h4>
-                <h6 class="card-text">${person.getRole()}</h6>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${person.getID()}</li>
-                    <li class="list-group-item">Email: ${person.getEmail()}</li>
-                    <li class="list-group-item">Office number: ${person.officeNumber}</li>
-                </ul>
+                <div class="card-body">
+                    <h4 class="card-title">${person.getName()}</h4>
+                    <h6 class="card-text">${person.getRole()}</h6>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ID: ${person.getID()}</li>
+                        <li class="list-group-item">Email: ${person.getEmail()}</li>
+                        <li class="list-group-item">Office number: ${person.officeNumber}</li>
+                    </ul>
+                </div>
             </div>
         `
         } else if (person.getRole() === "Engineer") {
             return `
             <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h4 class="card-title">${person.getName()}</h4>
-                <h6 class="card-text">${person.getRole()}</h6>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${person.getID()}</li>
-                    <li class="list-group-item">Email: ${person.getEmail()}</li>
-                    <li class="list-group-item">Github: <a href="github.com/${person.getGithub()}" class="card-link">${person.getGithub()}</a></li>
-                </ul>
+                <div class="card-body">
+                    <h4 class="card-title">${person.getName()}</h4>
+                    <h6 class="card-text">${person.getRole()}</h6>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ID: ${person.getID()}</li>
+                        <li class="list-group-item">Email: ${person.getEmail()}</li>
+                        <li class="list-group-item">Github: <a href="https:/github.com/${person.getGithub()}" class="card-link">${person.getGithub()}</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
         `
         } else if (person.getRole() === "Intern") {
             return `
             <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h4 class="card-title">${person.getName()}</h4>
-                <h6 class="card-text">${person.getRole()}</h6>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">ID: ${person.getID()}</li>
-                    <li class="list-group-item">Email: ${person.getEmail()}</li>
-                    <li class="list-group-item">School: ${person.getSchool()} </li>
-                </ul>
+                <div class="card-body">
+                    <h4 class="card-title">${person.getName()}</h4>
+                    <h6 class="card-text">${person.getRole()}</h6>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">ID: ${person.getID()}</li>
+                        <li class="list-group-item">Email: ${person.getEmail()}</li>
+                        <li class="list-group-item">School: ${person.getSchool()} </li>
+                    </ul>
+                </div>
             </div>
-        </div>
         `
         }
     })
@@ -177,15 +178,17 @@ return `
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Profile Generator</title>
 </head>
 <body>
-    <header class = "jumbotron jumbotron-fluid .bg-info">My Team</header>
-    <main>
+    <div class = "jumbotron">
+        <h1 class="display-4">My Team</h1>
+    </div>
+    <div class="container d-flex flex-wrap align-items-center">
         ${createCard}
-    </main>
+    </div>
 </body>
 </html>
 `

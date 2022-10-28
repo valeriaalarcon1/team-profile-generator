@@ -1,5 +1,15 @@
+.jumbotron {
+    background-color: teal;
+    color: white;
+    text-align: center;
+}
 
-main {
+.card {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
+    padding: 5px;
+    margin: 30px;
+    box-sizing: border-box;
 }
